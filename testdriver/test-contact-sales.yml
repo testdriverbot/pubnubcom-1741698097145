@@ -1,0 +1,13 @@
+version: 4.2.13
+session: 67d036946ac63cc8b4cc3038
+steps:
+  - prompt: Click on "Contact Sales" button.
+    commands:
+      - command: hover-text
+        text: Contact Sales
+        description: contact sales button in the header
+        action: click
+  - prompt: Assert that the contact form page is displayed.
+    commands:
+      - command: assert
+        expect: Find out how PubNub can help your business
