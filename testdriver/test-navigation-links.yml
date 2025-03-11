@@ -1,0 +1,35 @@
+version: 4.2.13
+session: 67d036b2e33a885faede562e
+steps:
+  - prompt: Click on "Products" link in the navigation bar.
+    commands:
+      - command: hover-text
+        text: Products
+        description: products link in the navigation bar
+        action: click
+  - prompt: Assert that the Products page loads successfully.
+    commands:
+      - command: assert
+        expect: PUBNUB PLATFORM text is visible on the Products page
+  - prompt: Assert that the Products page loads successfully.
+    commands:
+      - command: hover-text
+        text: Overview
+        description: first item in the Products dropdown
+        action: click
+      - command: wait
+        timeout: 3000
+      - command: assert
+        expect: Overview page is visible
+  - prompt: Click on "Solutions" link in the navigation bar.
+    commands:
+      - command: hover-text
+        text: Solutions
+        description: solutions link in the navigation bar
+        action: click
+  - prompt: >-
+      Assert that the Solutions page loads successfully.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: BY USE CASE text is visible on the Solutions page
